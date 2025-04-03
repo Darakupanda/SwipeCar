@@ -6,22 +6,19 @@ using UnityEngine.UI;
 
 public class GameDirector : MonoBehaviour
 {
-    GameObject car;
-    GameObject flag;
-    GameObject Distance;
+    public Transform car;
+    public Transform flag;
+    public TextMeshProUGUI Distance;
     // Start is called before the first frame update
     void Start()
     {
-     this.car = GameObject.Find("car");
-     this.flag = GameObject.Find("flag");
-     this.Distance = GameObject.Find("Distance");   
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        float length = this.flag.transform.position.x -
-            this.car.transform.position.x - 1.62f;        this.Distance.GetComponent<TextMeshProUGUI>().text=
-            "Distance:" + length.ToString("F2") + "m";
+        float length = this.flag.position.x - this.car.position.x - 1.62f;
+        this.Distance.text="距離:" + length.ToString("F2") + "m";
     }
 }
