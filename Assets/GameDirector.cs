@@ -19,6 +19,10 @@ public class GameDirector : MonoBehaviour
     void Update()
     {
         float length = this.flag.position.x - this.car.position.x - 1.62f;
-        this.Distance.text="距離:" + length.ToString("F2") + "m";
+        if(length >= 0){
+            this.Distance.text="距離:" + length.ToString("F2") + "m";
+        } else {
+            this.Distance.text = "FLAG OVER";
+        }
     }
 }
